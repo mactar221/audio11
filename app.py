@@ -12,11 +12,11 @@ SUPPORTED_MODELS = ["tiny", "base"]  # "small", "medium", "large"
 os.makedirs(TMP_PATH, exist_ok=True)
 
 
-#def download_youtube_audio(youtube_url):
-    #yt = YouTube(youtube_url)
-    #audio_stream = yt.streams.filter(only_audio=True).first()
-    #audio_file = audio_stream.download(output_path=TMP_PATH)
-    #return audio_file
+def download_youtube_audio(youtube_url):
+    yt = YouTube(youtube_url)
+    audio_stream = yt.streams.filter(only_audio=True).first()
+    audio_file = audio_stream.download(output_path=TMP_PATH)
+    return audio_file
 
 
 def transcribe_audio(audio_file_path, model_name="base"):
